@@ -1,3 +1,7 @@
+'TODO debug, get luca to break the program
+'TODO loop thru chars, 3 vars - count, lastchar and currentchar
+'TODO find percentage of compression
+
 Imports System.IO
 Module Module1
     Sub Main()
@@ -17,6 +21,7 @@ Module Module1
                 End
         End Select
         Console.ReadLine()
+
     End Sub
     Function menu()
         Dim flag As Boolean = False
