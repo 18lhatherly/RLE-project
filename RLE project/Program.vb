@@ -1,6 +1,5 @@
 Imports System.IO
 Module Module1
-
     Sub Main()
         Dim menuSelect As String
         menuSelect = menu()
