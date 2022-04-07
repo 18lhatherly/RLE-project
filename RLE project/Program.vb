@@ -139,6 +139,8 @@ Module Module1
         Dim ASCIIart(ASCIIlines) As String
         Dim CompArr(ASCIIlines) As String
         Dim twoDigitCount As String
+        Dim charCompTotal As Integer
+        Dim charDecompTotal As Integer
 
         Console.WriteLine("Please enter the name of the text file. ")
         While Console.ReadLine().ToLower <> "logoart.txt"
@@ -147,41 +149,50 @@ Module Module1
         Dim ASCIIArtFile As New StreamReader("\\hgs6\users$\students\18\18lhatherly\My Documents\Logoart.txt")
         For i = 0 To ASCIIlines - 1
             ASCIIart(i) = ASCIIArtFile.ReadLine()
-            Console.WriteLine(ASCIIart(i))
+            'Console.WriteLine(ASCIIart(i))
         Next
 
         For i = 0 To ASCIIlines - 1
-            Console.WriteLine("line " & i)
-            Console.WriteLine()
-            Console.WriteLine(ASCIIart(i).Length)
-            For j = 0 To ASCIIart(i).Length
+            For j = 0 To ASCIIart(i).Length - 2
                 currentChar = ASCIIart(i).Substring(j, 1)
                 nextChar = ASCIIart(i).Substring(j + 1, 1)
-                Console.WriteLine("current Char is " & currentChar)
-                Console.WriteLine("next Char is " & nextChar)
                 If currentChar = nextChar Then
-                    Console.WriteLine("current Char is the same as next Char")
                     count += 1
-                    Console.WriteLine("count is " & count)
                 Else
                     twoDigitCount = twoDigitNum(count)
-                    Console.WriteLine("2digitcount is " & twoDigitCount)
                     CompArr(i) = CompArr(i) & twoDigitCount & currentChar
-                    Console.WriteLine("compressed array is now " & CompArr(i))
                     count = 1
                 End If
             Next
+            If nextChar <> currentChar Then
+                twoDigitCount = twoDigitNum(count)
+                CompArr(i) = CompArr(i) & twoDigitCount & nextChar
+                count = 1
+            End If
+            Console.WriteLine(CompArr(i))
         Next
+        For i = 0 To ASCIIlines - 1
+            For j = 0 To CompArr(i).Length
+                charCompTotal += 1
+            Next
+        Next
+        Console.WriteLine()
+        Console.WriteLine("The compressed array containts " & charCompTotal & " values")
 
+        For i = 0 To ASCIIlines - 1
+            For j = 0 To ASCIIart(i).Length
+                charDecompTotal += 1
+            Next
+        Next
+        Console.WriteLine("The decompressed array containts " & charDecompTotal & " values")
+
+        Main()
     End Sub
 
     Function twoDigitNum(num)
-        If Str(num).Length = 1 Then
-            num = 0 & num
-            Return num
-        Else
-            Return num
-        End If
+        num = num.ToString
+        num = "0" & num
+        Return num
     End Function
 
     Function valid(input)
