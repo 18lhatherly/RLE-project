@@ -15,7 +15,7 @@ Module Module1
             Case 3
                 convertToASCII()
             Case 4
-
+                convertToRLE()
             Case 5
                 Console.WriteLine("Thank you for using my program, have a nice day.")
                 End
@@ -36,7 +36,7 @@ Module Module1
         choice = Console.ReadLine()
         While flag = False
             If IsNumeric(choice) = True Then
-                If choice >= 1 And choice < 5 And choice.Length = 1 Then
+                If choice >= 1 And choice < 6 And choice.Length = 1 Then
                     flag = True
                 Else
                     Console.Write("Your input was too large/small/a decimal. Enter another option. ")
@@ -87,7 +87,7 @@ Module Module1
             Console.WriteLine("Enter a valid file name.")
         End While
         Dim ASCIIart(ASCIIlength) As String
-        Dim ASCIIartFile As New StreamReader("C:\Users\laure\Documents\LogoArt.txt")
+        Dim ASCIIartFile As New StreamReader("\\hgs6\users$\students\18\18lhatherly\My Documents\LogoArt.txt")
         Console.WriteLine()
         For i = 0 To ASCIIlength - 1
             ASCIIart(i) = ASCIIartFile.ReadLine()
@@ -108,7 +108,7 @@ Module Module1
         While Console.ReadLine().ToLower <> "logorle.txt"
             Console.WriteLine("Enter a valid file name.")
         End While
-        Dim ASCIIRLEFile As New StreamReader("C:\Users\laure\Documents\LogoRLE.txt")
+        Dim ASCIIRLEFile As New StreamReader("\\hgs6\users$\students\18\18lhatherly\My Documents\LogoRLE.txt")
         For i = 0 To ASCIIlength - 1
             ASCIIRLE(i) = ASCIIRLEFile.ReadLine()
             'Console.WriteLine(ASCIIRLE(i))
@@ -131,6 +131,59 @@ Module Module1
 
     End Sub
 
+    Sub convertToRLE()
+        Dim currentChar As Char
+        Dim nextChar As Char
+        Dim count As Integer = 1
+        Dim ASCIIlines As Integer = 14
+        Dim ASCIIart(ASCIIlines) As String
+        Dim CompArr(ASCIIlines) As String
+        Dim twoDigitCount As String
+
+        Console.WriteLine("Please enter the name of the text file. ")
+        While Console.ReadLine().ToLower <> "logoart.txt"
+            Console.WriteLine("Enter a valid file name.")
+        End While
+        Dim ASCIIArtFile As New StreamReader("\\hgs6\users$\students\18\18lhatherly\My Documents\Logoart.txt")
+        For i = 0 To ASCIIlines - 1
+            ASCIIart(i) = ASCIIArtFile.ReadLine()
+            Console.WriteLine(ASCIIart(i))
+        Next
+
+        For i = 0 To ASCIIlines - 1
+            Console.WriteLine("line " & i)
+            Console.WriteLine()
+            Console.WriteLine(ASCIIart(i).Length)
+            For j = 0 To ASCIIart(i).Length
+                currentChar = ASCIIart(i).Substring(j, 1)
+                nextChar = ASCIIart(i).Substring(j + 1, 1)
+                Console.WriteLine("current Char is " & currentChar)
+                Console.WriteLine("next Char is " & nextChar)
+                If currentChar = nextChar Then
+                    Console.WriteLine("current Char is the same as next Char")
+                    count += 1
+                    Console.WriteLine("count is " & count)
+                Else
+                    twoDigitCount = twoDigitNum(count)
+                    Console.WriteLine("2digitcount is " & twoDigitCount)
+                    CompArr(i) = CompArr(i) & twoDigitCount & currentChar
+                    Console.WriteLine("compressed array is now " & CompArr(i))
+                    count = 1
+                End If
+            Next
+        Next
+
+    End Sub
+
+    Function twoDigitNum(num)
+        If Str(num).Length = 1 Then
+            num = 0 & num
+            Return num
+        Else
+            Return num
+        End If
+    End Function
+
     Function valid(input)
         Dim flag As Boolean
         While flag = False
@@ -149,5 +202,4 @@ Module Module1
         Return input
     End Function
 End Module
-
 
