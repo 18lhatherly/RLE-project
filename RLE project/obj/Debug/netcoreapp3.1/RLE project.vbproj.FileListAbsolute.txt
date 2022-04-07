@@ -1,0 +1,13 @@
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\bin\Debug\netcoreapp3.1\RLE project.exe
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\bin\Debug\netcoreapp3.1\RLE project.deps.json
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\bin\Debug\netcoreapp3.1\RLE project.runtimeconfig.json
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\bin\Debug\netcoreapp3.1\RLE project.runtimeconfig.dev.json
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\bin\Debug\netcoreapp3.1\RLE project.dll
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\bin\Debug\netcoreapp3.1\RLE project.pdb
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\obj\Debug\netcoreapp3.1\RLE project.vbprojAssemblyReference.cache
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\obj\Debug\netcoreapp3.1\RLE project.AssemblyInfoInputs.cache
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\obj\Debug\netcoreapp3.1\RLE project.AssemblyInfo.vb
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\obj\Debug\netcoreapp3.1\RLE project.vbproj.CoreCompileInputs.cache
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\obj\Debug\netcoreapp3.1\RLE project.dll
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\obj\Debug\netcoreapp3.1\RLE project.pdb
+C:\Users\laure\Documents\Visual Studio 2019\RLE project\RLE project\obj\Debug\netcoreapp3.1\RLE project.genruntimeconfig.cache

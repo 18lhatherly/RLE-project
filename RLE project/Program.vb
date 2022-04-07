@@ -87,7 +87,7 @@ Module Module1
             Console.WriteLine("Enter a valid file name.")
         End While
         Dim ASCIIart(ASCIIlength) As String
-        Dim ASCIIartFile As New StreamReader("\\hgs6\users$\students\18\18lhatherly\My Documents\LogoArt.txt")
+        Dim ASCIIartFile As New StreamReader("C:\Users\laure\Documents\LogoArt.txt")
         Console.WriteLine()
         For i = 0 To ASCIIlength - 1
             ASCIIart(i) = ASCIIartFile.ReadLine()
@@ -108,7 +108,7 @@ Module Module1
         While Console.ReadLine().ToLower <> "logorle.txt"
             Console.WriteLine("Enter a valid file name.")
         End While
-        Dim ASCIIRLEFile As New StreamReader("\\hgs6\users$\students\18\18lhatherly\My Documents\LogoRLE.txt")
+        Dim ASCIIRLEFile As New StreamReader("C:\Users\laure\Documents\LogoRLE.txt")
         For i = 0 To ASCIIlength - 1
             ASCIIRLE(i) = ASCIIRLEFile.ReadLine()
             'Console.WriteLine(ASCIIRLE(i))
@@ -146,12 +146,14 @@ Module Module1
         While Console.ReadLine().ToLower <> "logoart.txt"
             Console.WriteLine("Enter a valid file name.")
         End While
-        Dim ASCIIArtFile As New StreamReader("\\hgs6\users$\students\18\18lhatherly\My Documents\Logoart.txt")
+        Console.WriteLine()
+        Dim ASCIIArtFile As New StreamReader("C:\Users\laure\Documents\LogoArt.txt")
         For i = 0 To ASCIIlines - 1
             ASCIIart(i) = ASCIIArtFile.ReadLine()
             'Console.WriteLine(ASCIIart(i))
         Next
 
+        'Console.WriteLine("RLE for the file:")
         For i = 0 To ASCIIlines - 1
             For j = 0 To ASCIIart(i).Length - 2
                 currentChar = ASCIIart(i).Substring(j, 1)
@@ -172,7 +174,7 @@ Module Module1
             Console.WriteLine(CompArr(i))
         Next
         For i = 0 To ASCIIlines - 1
-            For j = 0 To CompArr(i).Length
+            For j = 0 To CompArr(i).Length - 1
                 charCompTotal += 1
             Next
         Next
@@ -180,12 +182,13 @@ Module Module1
         Console.WriteLine("The compressed array containts " & charCompTotal & " values")
 
         For i = 0 To ASCIIlines - 1
-            For j = 0 To ASCIIart(i).Length
+            For j = 0 To ASCIIart(i).Length - 1
                 charDecompTotal += 1
             Next
         Next
         Console.WriteLine("The decompressed array containts " & charDecompTotal & " values")
-
+        Console.WriteLine("The decompressed array takes up " & 100 - (charCompTotal / charDecompTotal * 100) & "% more space")
+        Console.WriteLine()
         Main()
     End Sub
 
